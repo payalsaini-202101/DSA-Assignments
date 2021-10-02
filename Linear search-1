@@ -1,0 +1,39 @@
+#include<stdio.h>
+ #include<conio.h>
+  int main()
+{
+  int a[3][3],i,j,item,found=0,row,col;
+  printf("Enter element of 2D array of 3*3 matrix\n");
+    for(i=0;i<=2;i++)
+   {
+     for(j=0;j<=2;j++)
+     {
+      scanf("%d",&a[i][j]);
+     }
+   }
+   printf("Enter searching element: ");
+   scanf("%d", &item);
+
+  for(i=0;i<=2;i++)
+  {
+    for(j=0;j<=2;j++)
+    {
+      if(item==a[i][j])
+      {
+      found=1;
+      row=i;
+      col=j;
+      break;
+      }
+    }
+  }
+  if(found==1)
+  {
+   printf("Element is found at %d row and %d col", row+1,col+1);
+  }
+  else
+  {
+  printf("Element is not found");
+  }
+  return 0;
+}
