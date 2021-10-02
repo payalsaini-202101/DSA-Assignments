@@ -1,0 +1,40 @@
+//Using recursion method Write a program to find a element in array using binary search//
+#include<iostream>
+using namespace std;
+int search(int array[],int first,int length,int key);
+int main()
+{
+	int key,length,first=0,i;
+	cout<<"enter the length of the array: ";
+	cin>>length;
+	int array[length];
+		cout<<"enter the elements of array\n";
+	for(i=0;i<length;i++)
+	{
+		cin>>array[i];
+    }
+    cout<<"enter the element to find: ";
+    cin>>key;
+int index= search(array,first,length-1,key);
+if(index== -1)
+cout<<" your element is not found";
+else
+cout<<"your element is found at "<<index+1<<"th place ";
+return 0;
+}
+int search(int array[],int first,int length,int key)
+{
+	if(first<=length)
+	{
+		int mid=(first+length)/2;
+		if(array[mid]==key)
+	{
+		return mid;
+	}
+	else if(array[mid]>key)
+	return search(array,first,mid-1,key);
+	else if(array[mid]<key)
+	return search(array,mid+1,length,key);
+	}
+	return -1;
+}
